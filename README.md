@@ -13,7 +13,7 @@ m -> [cm, km, yd, ft]
 
 ## Usage
 
-`/convert/cm/m/2500`
+*GET*`/convert/cm/m/2500`
 ```json
 {
   "message": "Conversion successful",
