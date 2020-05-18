@@ -36,3 +36,16 @@ To run all tests from project root
 ```
 go test ./... -v
 ```
+```text
+=== RUN   TestUnsupportedConversion
+--- PASS: TestUnsupportedConversion (0.00s)
+=== RUN   TestMeterConversions
+--- PASS: TestMeterConversions (0.00s)
+=== RUN   TestCentimeterConversions
+--- PASS: TestCentimeterConversions (0.00s)
+=== RUN   TestInchConversions
+--- PASS: TestInchConversions (0.00s)
+=== RUN   TestFootConversions
+--- PASS: TestFootConversions (0.00s)
+PASS
+```
