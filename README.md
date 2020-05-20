@@ -16,6 +16,8 @@ km -> [cm, m, yd, ft]
 
 ## Usage
 
+*Convert 2500 cm to m*
+
 *GET*`/convert/cm/m/2500`
 ```json
 {
