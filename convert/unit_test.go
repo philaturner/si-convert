@@ -126,3 +126,31 @@ func TestFootConversions(t *testing.T) {
 		}
 	}
 }
+
+var kilometerTests = []struct {
+	input    float64 // input
+	to       string  // conversion to
+	expected float64 // expected result
+}{
+	{1, "cm", 100000},
+	{122.4, "cm", 12240000},
+	{10, "m", 10000},
+	{122.4, "m", 122400},
+	{1, "ft", 3281},
+	{55.1, "ft", 180783.1},
+	{1, "yd", 1094},
+	{12.4, "yd", 13565.6},
+}
+
+func TestKilometerConversion(t *testing.T) {
+	for _, kt := range kilometerTests {
+		siUnit := unit.SI{Value: kt.input, Option: "km"}
+		actual, err := siUnit.Convert(kt.to)
+		if err != nil {
+			t.Errorf("Convert(%g): to %s,  expected %g, actual %g", kt.input, kt.to, kt.expected, actual)
+		}
+		if actual != kt.expected {
+			t.Errorf("Convert(%g): to %s, expected %g, actual %g", kt.input, kt.to, kt.expected, actual)
+		}
+	}
+}

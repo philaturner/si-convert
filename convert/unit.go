@@ -55,6 +55,17 @@ func (si SI) Convert(t string)(r float64, err error) {
 		case "ft":
 			return si.Value * 3.281, nil
 		}
+	case "km":
+		switch t {
+		case "cm":
+			return si.Value * 100000, nil
+		case "m":
+			return si.Value * 1000, nil
+		case "yd":
+			return si.Value * 1094, nil
+		case "ft":
+			return si.Value * 3281, nil
+		}
 	}
 
 	return 0, errors.New("no support for this conversion")

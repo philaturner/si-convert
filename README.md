@@ -11,6 +11,7 @@ cm -> [m, km, yd, ft]
 in -> [cm, m, km, yd, ft]
 ft -> [m, cm, km, yd]
 m -> [cm, km, yd, ft]
+km -> [cm, m, yd, ft]
 ```
 
 ## Usage
