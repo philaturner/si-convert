@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	port := 8080
+	port := 8082
 	logger := log.New(os.Stdout, "[SI-Convert] ", log.LstdFlags|log.Lshortfile)
 	a := api.New(logger)
 	logger.Printf("Api is listening on port: %v", port)
