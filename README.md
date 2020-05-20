@@ -22,7 +22,7 @@ km -> [cm, m, yd, ft]
 ```json
 {
   "message": "Conversion successful",
-  "data": 25,
+  "result": 25,
   "status": 200
 }
 ```
