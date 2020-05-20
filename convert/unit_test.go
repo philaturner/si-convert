@@ -6,8 +6,8 @@ import (
 )
 
 func TestUnsupportedConversion(t *testing.T) {
-	siUnit := unit.SI{Value: 100}
-	_, err := siUnit.Convert("b", "a")
+	siUnit := unit.SI{Value: 100, Option: "b"}
+	_, err := siUnit.Convert("a")
 	if err == nil {
 		t.Error()
 	}
@@ -30,8 +30,8 @@ var meterTests = []struct {
 
 func TestMeterConversions(t *testing.T) {
 	for _, tm := range meterTests {
-		siUnit := unit.SI{Value: tm.input}
-		actual, err := siUnit.Convert(tm.to, "m")
+		siUnit := unit.SI{Value: tm.input, Option: "m"}
+		actual, err := siUnit.Convert(tm.to)
 		if err != nil {
 			t.Errorf("Convert(%g): to %s,  expected %g, actual %g", tm.input, tm.to, tm.expected, actual)
 		}
@@ -58,8 +58,8 @@ var centimeterTests = []struct {
 
 func TestCentimeterConversions(t *testing.T) {
 	for _, tcm := range centimeterTests {
-		siUnit := unit.SI{Value: tcm.input}
-		actual, err := siUnit.Convert(tcm.to, "cm")
+		siUnit := unit.SI{Value: tcm.input, Option: "cm"}
+		actual, err := siUnit.Convert(tcm.to)
 		if err != nil {
 			t.Errorf("Convert(%g): to %s,  expected %g, actual %g", tcm.input, tcm.to, tcm.expected, actual)
 		}
@@ -88,8 +88,8 @@ var inchTests = []struct {
 
 func TestInchConversions(t *testing.T) {
 	for _, tinc := range inchTests {
-		siUnit := unit.SI{Value: tinc.input}
-		actual, err := siUnit.Convert(tinc.to, "in")
+		siUnit := unit.SI{Value: tinc.input, Option: "in"}
+		actual, err := siUnit.Convert(tinc.to)
 		if err != nil {
 			t.Errorf("Convert(%g): to %s,  expected %g, actual %g", tinc.input, tinc.to, tinc.expected, actual)
 		}
@@ -116,8 +116,8 @@ var footTests = []struct {
 
 func TestFootConversions(t *testing.T) {
 	for _, tft := range footTests {
-		siUnit := unit.SI{Value: tft.input}
-		actual, err := siUnit.Convert(tft.to, "ft")
+		siUnit := unit.SI{Value: tft.input, Option: "ft"}
+		actual, err := siUnit.Convert(tft.to)
 		if err != nil {
 			t.Errorf("Convert(%g): to %s,  expected %g, actual %g", tft.input, tft.to, tft.expected, actual)
 		}

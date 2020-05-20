@@ -4,10 +4,11 @@ import "errors"
 
 type SI struct {
 	Value float64
+	Option string
 }
 
-func (si SI) Convert(t string, f string)(r float64, err error) {
-	switch f {
+func (si SI) Convert(t string)(r float64, err error) {
+	switch si.Option {
 	case "cm":
 		switch t {
 		case "m":

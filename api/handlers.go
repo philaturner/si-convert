@@ -39,8 +39,8 @@ func (api *Api) handleStatus(w http.ResponseWriter, r *http.Request) {
 func (api *Api) handleConversion(w http.ResponseWriter, r *http.Request) {
 	parts := strings.Split(r.URL.Path, "/")
 	v, err := strconv.ParseFloat(parts[4], 64)
-	siUnit := unit.SI{Value: v}
-	res, err := siUnit.Convert(parts[3], parts[2])
+	siUnit := unit.SI{Value: v, Option: parts[2]}
+	res, err := siUnit.Convert(parts[3])
 	if err != nil {
 		api.jsonResponse(w, "We don't support this conversion", nil, http.StatusBadRequest)
 		return
