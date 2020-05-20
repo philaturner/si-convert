@@ -50,5 +50,7 @@ go test ./... -v
 --- PASS: TestInchConversions (0.00s)
 === RUN   TestFootConversions
 --- PASS: TestFootConversions (0.00s)
+=== RUN   TestKilometerConversion
+--- PASS: TestKilometerConversion (0.00s)
 PASS
 ```
