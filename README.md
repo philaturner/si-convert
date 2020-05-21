@@ -30,6 +30,17 @@ K -> [°C, °F]
 }
 ```
 
+*Convert 10°C to °F*
+
+*GET* `/convert/c/f/10`
+```json
+{
+  "message": "Conversion successful",
+  "result": 50,
+  "status": 200
+}
+```
+
 ## Docker
 
 `docker build -t si-convert .`
