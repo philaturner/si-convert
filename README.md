@@ -12,6 +12,9 @@ in -> [cm, m, km, yd, ft]
 ft -> [m, cm, km, yd, in]
 m -> [cm, km, yd, ft]
 km -> [cm, m, yd, ft]
+°C -> [°F, K]
+°F -> [°C, K]
+K -> [°C, °F]
 ```
 
 ## Usage
@@ -50,7 +53,9 @@ go test ./... -v
 --- PASS: TestInchConversions (0.00s)
 === RUN   TestFootConversions
 --- PASS: TestFootConversions (0.00s)
-=== RUN   TestKilometerConversion
---- PASS: TestKilometerConversion (0.00s)
+=== RUN   TestKilometerConversions
+--- PASS: TestKilometerConversions (0.00s)
+=== RUN   TestTemperatureConversions
+--- PASS: TestTemperatureConversions (0.00s)
 PASS
 ```

@@ -146,7 +146,7 @@ var kilometerTests = []struct {
 	{12.4, "yd", 13565.6},
 }
 
-func TestKilometerConversion(t *testing.T) {
+func TestKilometerConversions(t *testing.T) {
 	for _, kt := range kilometerTests {
 		siUnit := unit.SI{Value: kt.input, Option: "km"}
 		actual, err := siUnit.Convert(kt.to)
@@ -155,6 +155,40 @@ func TestKilometerConversion(t *testing.T) {
 		}
 		if actual != kt.expected {
 			t.Errorf("Convert(%g): to %s, expected %g, actual %g", kt.input, kt.to, kt.expected, actual)
+		}
+	}
+}
+
+var temperatureTests = []struct {
+	input float64
+	from string
+	to string
+	expected float64
+}{
+	{1000, "k", "c", 726.85},
+	{10, "k", "c", -263.15},
+	{1000, "k", "f", 1340.3300000000002},
+	{1.5, "k", "f", -456.96999999999997},
+	{1.5, "c", "f", 34.7},
+	{250, "c", "f", 482},
+	{-20, "c", "k", 253.14999999999998},
+	{250, "c", "k", 523.15},
+	{5, "f", "c", -15},
+	{200, "f", "c", 93.33333333333333},
+	{5, "f", "k", 258.15},
+	{200, "f", "k", 366.48333333333335},
+
+}
+
+func TestTemperatureConversions(t *testing.T) {
+	for _, temp := range temperatureTests {
+		siUnit := unit.SI{Value: temp.input, Option: temp.from}
+		actual, err := siUnit.Convert(temp.to)
+		if err != nil {
+			t.Errorf("Convert(%g %s): to %s,  expected %g, actual %g", temp.input, temp.from, temp.to, temp.expected, actual)
+		}
+		if actual != temp.expected {
+			t.Errorf("Convert(%g %s): to %s, expected %g, actual %g", temp.input, temp.from, temp.to, temp.expected, actual)
 		}
 	}
 }

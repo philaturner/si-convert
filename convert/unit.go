@@ -70,6 +70,27 @@ func (si SI) Convert(t string)(r float64, err error) {
 		case "ft":
 			return si.Value * 3281, nil
 		}
+	case "k":
+		switch t {
+		case "c":
+			return si.Value - 273.15, nil
+		case "f":
+			return ((si.Value - 273.15) * 9/5) + 32, nil
+		}
+	case "c":
+		switch t {
+		case "k":
+			return si.Value + 273.15, nil
+		case "f":
+			return (si.Value * 9/5) + 32, nil
+		}
+	case "f":
+		switch t {
+		case "c":
+			return (si.Value - 32) * 5/9, nil
+		case "k":
+			return ((si.Value + 459.67) * 5/9), nil
+		}
 	}
 
 	return 0, errors.New("no support for this conversion")
