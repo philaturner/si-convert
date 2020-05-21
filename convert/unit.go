@@ -11,6 +11,8 @@ func (si SI) Convert(t string)(r float64, err error) {
 	switch si.Option {
 	case "cm":
 		switch t {
+		case "in":
+			return si.Value / 2.54, nil
 		case "m":
 			return si.Value / 100, nil
 		case "km":
@@ -35,6 +37,8 @@ func (si SI) Convert(t string)(r float64, err error) {
 		}
 	case "ft":
 		switch t {
+		case "in":
+			return si.Value * 12, nil
 		case "m":
 			return si.Value / 3.281, nil
 		case "cm":

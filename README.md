@@ -7,9 +7,9 @@ A simple api service written in Go to convert between SI units
 ## Coverage
 
 ```
-cm -> [m, km, yd, ft]
+cm -> [m, km, yd, ft, in]
 in -> [cm, m, km, yd, ft]
-ft -> [m, cm, km, yd]
+ft -> [m, cm, km, yd, in]
 m -> [cm, km, yd, ft]
 km -> [cm, m, yd, ft]
 ```

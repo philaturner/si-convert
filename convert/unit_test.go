@@ -46,6 +46,8 @@ var centimeterTests = []struct {
 	to       string  // conversion to
 	expected float64 // expected result
 }{
+	{2.54, "in", 1},
+	{22.5, "in", 8.858267716535433},
 	{100, "m", 1},
 	{1, "m", 0.01},
 	{100, "km", 0.001},
@@ -104,6 +106,8 @@ var footTests = []struct {
 	to       string  // conversion to
 	expected float64 // expected result
 }{
+	{1, "in", 12},
+	{56.5, "in", 678},
 	{1, "cm", 30.48},
 	{10.4, "cm", 316.992},
 	{1, "m", 0.30478512648582745},
